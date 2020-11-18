@@ -15,7 +15,8 @@
     "lint": "eslint --fix ./src/**/*.ts?",
     "lint:ci": "eslint --format stylish ./src/**/*.ts?",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "test:ci": "CI=true npm run test"
   },
   "dependencies": {
     "@testing-library/jest-dom": "5.11.6",
