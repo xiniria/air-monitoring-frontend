@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Air Monitoring PWA",
+  "name": "Progressive web app for air monitoring - CentraleSupélec & Illuin Project",
   "icons": [
     {
       "src": "favicon.ico",
