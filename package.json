@@ -14,6 +14,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint --fix ./src/**/*.{ts,tsx}",
     "lint:ci": "eslint --format stylish ./src/**/*.{ts,tsx}",
+    "lockfile-lint": "lockfile-lint --path package-lock.json --type npm --validate-https --allowed-hosts npm",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "test:ci": "CI=true npm run test"
@@ -54,5 +55,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "lockfile-lint": "4.3.7"
   }
 }
