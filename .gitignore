@@ -46,3 +46,6 @@ lerna-debug.log*
 ## Others
 # ESLint cache
 .eslintcache
+
+# DeepCode Cache
+.dccache
