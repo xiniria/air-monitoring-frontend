@@ -15,6 +15,9 @@ const AddressAutocomplete = (): JSX.Element => {
     setValue,
     clearSuggestions,
   } = usePlacesAutocomplete({
+    requestOptions: {
+      componentRestrictions: { country: 'fr' },
+    },
     debounce: 300,
   });
   const ref = useOnclickOutside(() => {
