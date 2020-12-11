@@ -28,21 +28,20 @@ const AddressAutocomplete = (): JSX.Element => {
     setValue(e.currentTarget.value);
   };
 
-  const handleSelect = ({ description }: Suggestion) => () => {
+  const handleSelect = ({ description }: Suggestion) => async () => {
     // When user selects a place, we can replace the keyword without request data from API
     // by setting the second parameter as "false"
     setValue(description, false);
     clearSuggestions();
 
     // Get latitude and longitude via utility functions
-    getGeocode({ address: description })
-      .then((results) => getLatLng(results[0]))
-      .then(({ lat, lng }) => {
-        console.log('📍 Coordinates: ', { lat, lng });
-      })
-      .catch((error) => {
-        console.log('😱 Error: ', error);
-      });
+    try {
+      const results = await getGeocode({ address: description });
+      const coords = await getLatLng(results[0]);
+      console.log('📍 Coordinates: ', coords);
+    } catch (error) {
+      console.log('😱 Error: ', error);
+    }
   };
 
   const renderSuggestions = () =>
