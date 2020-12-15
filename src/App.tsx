@@ -17,7 +17,7 @@ function App(): JSX.Element {
           <Route exact path="/info" component={Home}></Route>
         </Switch>
         <div className="container">
-          <AddressAutocomplete></AddressAutocomplete>
+          <AddressAutocomplete />
         </div>
         <Navbar></Navbar>
       </div>
