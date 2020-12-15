@@ -1,6 +1,14 @@
 import React from 'react';
+import Adapter from  '@wojtekmaj/enzyme-adapter-react-17';
 import { render, screen } from '@testing-library/react';
+import { configure, shallow } from 'enzyme';
 import App from 'App';
+
+configure({adapter: new Adapter()});
+
+test('renders without crashing', () => {
+  render(<App />);
+});
 
 test('renders Location link', () => {
   render(<App />);
