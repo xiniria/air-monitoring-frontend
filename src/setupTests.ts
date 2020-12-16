@@ -4,18 +4,19 @@
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare const global: any;
 
 export const setupGoogleMock = () => {
   /*** Mock Google Maps JavaScript API ***/
   const google = {
     maps: {
-      Marker:class{},
-      Map:class{ setTilt(){} fitBounds(){}},
-      LatLngBounds:class{},
-      places:{
+      Marker: class {},
+      Map: class {},
+      LatLngBounds: class {},
+      places: {
         Autocomplete: class {},
-        AutocompleteService:class{},
+        AutocompleteService: class {},
         PlacesServiceStatus: {
           INVALID_REQUEST: 'INVALID_REQUEST',
           NOT_FOUND: 'NOT_FOUND',
@@ -24,9 +25,8 @@ export const setupGoogleMock = () => {
           REQUEST_DENIED: 'REQUEST_DENIED',
           UNKNOWN_ERROR: 'UNKNOWN_ERROR',
           ZERO_RESULTS: 'ZERO_RESULTS',
-          STATUS:'OK',
         },
-        PlacesAutocomplete:{
+        PlacesAutocomplete: {
           INVALID_REQUEST: 'INVALID_REQUEST',
           NOT_FOUND: 'NOT_FOUND',
           OK: 'OK',
@@ -35,11 +35,11 @@ export const setupGoogleMock = () => {
           UNKNOWN_ERROR: 'UNKNOWN_ERROR',
           ZERO_RESULTS: 'ZERO_RESULTS',
           STATUS: 'OK',
-        }
+        },
       },
 
-      MarkerClusterer:class{},
-      Geocoder:class{},
+      MarkerClusterer: class {},
+      Geocoder: class {},
     },
   };
   global.window.google = google;
