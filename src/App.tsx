@@ -23,7 +23,7 @@ function App(): JSX.Element {
         <h3>Latitude : {latitude}</h3>
         <h3>Longitude : {longitude}</h3>
         {error && <h4>Erreur : {error}</h4>}
-        
+
         <div className="container">
           <AddressAutocomplete />
         </div>
