@@ -1,10 +1,10 @@
 import React from 'react';
-import Adapter from  '@wojtekmaj/enzyme-adapter-react-17';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { render, screen } from '@testing-library/react';
 import { configure } from 'enzyme';
 import App from 'App';
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('renders without crashing', () => {
   render(<App />);

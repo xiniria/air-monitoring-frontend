@@ -1,12 +1,12 @@
 import React from 'react';
-import Adapter from  '@wojtekmaj/enzyme-adapter-react-17';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { configure, shallow } from 'enzyme';
 import AddressAutocomplete from 'components/AddressAutocomplete/AddressAutocomplete';
 
-configure({adapter: new Adapter()});
+configure({ adapter: new Adapter() });
 
 test('renders correctly address input', () => {
-  const addressInput = shallow(<AddressAutocomplete />).find(AddressAutocomplete);
+  const addressInput = shallow(<AddressAutocomplete />).find('input');
   expect(addressInput).toMatchSnapshot();
 });
 
