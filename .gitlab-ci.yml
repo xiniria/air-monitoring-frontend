@@ -29,7 +29,8 @@ lint:
   before_script:
     - npm install
   script:
-    - npm run lint:ci
+    - npm run eslint:ci
+    - npm run stylelint:ci
 
 test:
   stage: Test
