@@ -1,12 +1,12 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3.5rem 5%;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.5rem 5%;
+  text-align: center;
 }
 
-input{
+input {
   padding: 1rem 1.2rem;
   width: 15rem;
   border: 3px solid mediumseagreen;
@@ -15,7 +15,7 @@ input{
   line-height: 1.5;
 }
 
-ul{
+ul {
   position: absolute;
   margin: 0;
   padding: 0;
@@ -27,8 +27,8 @@ ul{
   overflow-y: auto;
 }
 
-li{
-    padding: 1rem 1.2rem;
-    width: 15rem;
-    cursor: pointer;
+li {
+  padding: 1rem 1.2rem;
+  width: 15rem;
+  cursor: pointer;
 }
