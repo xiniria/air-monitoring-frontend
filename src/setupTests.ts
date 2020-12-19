@@ -4,8 +4,12 @@
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare const global: any;
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    google: any;
+  }
+}
 
 export const setupGoogleMock = () => {
   /*** Mock Google Maps JavaScript API ***/
