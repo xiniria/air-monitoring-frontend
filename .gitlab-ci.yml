@@ -25,6 +25,8 @@ prepare:
     - npm install
 
 lint:
+  except:
+    - schedules
   stage: Lint
   before_script:
     - npm install
@@ -32,21 +34,54 @@ lint:
     - npm run lint:ci
 
 test:
+  except:
+    - schedules
   stage: Test
   script:
     - npm run test:ci
 
 build:
+  except:
+    - schedules
   stage: Build
   script:
     - npm run build
 
 audit:
+  except:
+    - schedules
   stage: Security
   script:
     - npm audit
 
 lockfile_lint:
+  except:
+    - schedules
   stage: Security
   script:
     - npm run lockfile-lint
+
+snyk_test:
+  only:
+    refs:
+      - schedules
+    variables:
+      - $IS_WEEKLY_RUN != "true"
+  stage: Security
+  before_script:
+    - npm run snyk:auth "$SNYK_TOKEN"
+  script:
+    - npm run snyk:test
+
+snyk_monitor:
+  only:
+    refs:
+      - schedules
+    variables:
+      - $IS_WEEKLY_RUN == "true"
+  stage: Security
+  before_script:
+    - npm run snyk:auth "$SNYK_TOKEN"
+  script:
+    - npm run snyk:monitor
+
