@@ -56,7 +56,11 @@ const AddressAutocomplete = (): JSX.Element => {
       } = suggestion;
 
       return (
-        <li key={id ? +index : index} onClick={handleSelect(suggestion)}>
+        <li
+          className="address"
+          key={id ? +index : index}
+          onClick={handleSelect(suggestion)}
+        >
           <strong>{main_text}</strong> <small>{secondary_text}</small>
         </li>
       );
@@ -65,13 +69,16 @@ const AddressAutocomplete = (): JSX.Element => {
   return (
     <div ref={ref}>
       <input
+        className="address-input"
         value={value}
         onChange={handleInput}
         disabled={!ready}
         placeholder="Choisissez un endroit..."
       />
       {/* We can use the "status" to decide whether we should display the dropdown or not */}
-      {status === 'OK' && <ul>{renderSuggestions()}</ul>}
+      {status === 'OK' && (
+        <ul className="address-suggestions">{renderSuggestions()}</ul>
+      )}
     </div>
   );
 };

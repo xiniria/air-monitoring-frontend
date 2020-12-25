@@ -12,6 +12,8 @@ function App(): JSX.Element {
   return (
     <Router>
       <div className="App">
+        <AddressAutocomplete />
+
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route exact path="/location" component={Home}></Route>
@@ -24,11 +26,7 @@ function App(): JSX.Element {
         <h3>Longitude : {longitude}</h3>
         {error && <h4>Erreur : {error}</h4>}
 
-        <div className="container">
-          <AddressAutocomplete />
-        </div>
-
-        <Navbar></Navbar>
+        <Navbar />
       </div>
     </Router>
   );
