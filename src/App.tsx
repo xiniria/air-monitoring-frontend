@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from 'components/Navbar/Navbar';
 import Home from 'components/Home/Home';
 import Geolocation from 'components/Geolocation/Geolocation';
+import AddressAutocomplete from 'components/AddressAutocomplete/AddressAutocomplete';
 import 'App.css';
 
 function App(): JSX.Element {
@@ -11,6 +12,8 @@ function App(): JSX.Element {
   return (
     <Router>
       <div className="App">
+        <AddressAutocomplete />
+
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route exact path="/location" component={Home}></Route>
@@ -23,7 +26,7 @@ function App(): JSX.Element {
         <h3>Longitude : {longitude}</h3>
         {error && <h4>Erreur : {error}</h4>}
 
-        <Navbar></Navbar>
+        <Navbar />
       </div>
     </Router>
   );

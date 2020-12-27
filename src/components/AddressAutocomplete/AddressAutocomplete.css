@@ -1,0 +1,33 @@
+.address-input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  line-height: 1.5;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid mediumseagreen;
+}
+
+.address-suggestions {
+  width: 100%;
+  position: fixed;
+  top: 3.3rem;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 2px solid mediumseagreen;
+  border-top: 1px solid mediumseagreen;
+  list-style-type: none;
+  overflow-y: auto;
+}
+
+.address {
+  padding: 1rem 1.2rem;
+  background-color: white;
+  cursor: pointer;
+}
