@@ -7,11 +7,7 @@
   font-weight: bold;
   border: none;
   outline: none;
-<<<<<<< HEAD
-  border-bottom: 3px solid mediumseagreen;
-=======
   border-bottom: 2px solid mediumseagreen;
->>>>>>> 2374417592503014e94b959ab97495ef14832c1b
 }
 
 .address-suggestions {
