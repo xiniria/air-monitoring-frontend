@@ -7,7 +7,11 @@
   font-weight: bold;
   border: none;
   outline: none;
+<<<<<<< HEAD
   border-bottom: 3px solid mediumseagreen;
+=======
+  border-bottom: 2px solid mediumseagreen;
+>>>>>>> 2374417592503014e94b959ab97495ef14832c1b
 }
 
 .address-suggestions {
@@ -20,8 +24,8 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border: 3px solid mediumseagreen;
-  border-top: 2px solid mediumseagreen;
+  border: 2px solid mediumseagreen;
+  border-top: 1px solid mediumseagreen;
   list-style-type: none;
   overflow-y: auto;
 }
