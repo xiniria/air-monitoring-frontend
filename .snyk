@@ -14,4 +14,8 @@ ignore:
     - react-scripts > jest > @jest/core > jest-config > @jest/test-sequencer > jest-runner > jest-runtime > yargs > y18n:
         reason: Waiting for fix
         expires: '2021-01-22T21:50:40.114Z'
+  SNYK-JS-CACHEBASE-1054631:
+    - react-scripts > babel-jest > @jest/transform > jest-haste-map > sane > anymatch > micromatch > braces > snapdragon > base > cache-base:
+        reason: Waiting for fix
+        expires: '2021-01-22T21:50:40.114Z'
 patch: {}
