@@ -1,5 +1,6 @@
 .address-input {
   width: 100%;
+  position: fixed;
   padding: 1rem 1.2rem;
   line-height: 1.5;
   top: 0;
