@@ -1,4 +1,5 @@
-import { useState, useLayoutEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { ILocation, LocationTypes } from 'LocationContext';
 
 export interface PositionError {
   code: number;
@@ -7,28 +8,21 @@ export interface PositionError {
   POSITION_UNAVAILABLE: number;
 }
 
-export interface IGeolocation {
-  latitude: number;
-  longitude: number;
-  error: string;
-}
-
-function Geolocation(): IGeolocation {
-  const [location, setPosition] = useState({
+function useGeolocation(): ILocation {
+  const [currentPos, setCurrentPos] = useState({
     latitude: NaN,
     longitude: NaN,
   });
-
   const [error, setError] = useState('');
 
-  const positionError = (error: PositionError) => {
+  const positionError = (postionError: PositionError) => {
     const errors = {
       PERMISSION_DENIED: 1,
       POSITION_UNAVAILABLE: 2,
       TIMEOUT: 3,
     };
 
-    switch (error.code) {
+    switch (postionError.code) {
       case errors.TIMEOUT:
         setError('Erreur lors de la géolocalisation : Timeout !');
         break;
@@ -45,10 +39,10 @@ function Geolocation(): IGeolocation {
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(function (position) {
-        setPosition({
+      navigator.geolocation.getCurrentPosition(function (position) {
+        setCurrentPos({
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         });
@@ -58,9 +52,9 @@ function Geolocation(): IGeolocation {
         "La géolocalisation n'est pas supportée par votre navigateur. Veuillez changer de navigateur ou renseigner une addresse.",
       );
     }
-  });
+  }, [currentPos]);
 
-  return { ...location, error };
+  return { ...currentPos, error, type: LocationTypes.Geolocation };
 }
 
-export default Geolocation;
+export default useGeolocation;
