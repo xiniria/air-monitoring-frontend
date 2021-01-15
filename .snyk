@@ -18,4 +18,17 @@ ignore:
     - react-scripts > babel-jest > @jest/transform > jest-haste-map > sane > anymatch > micromatch > braces > snapdragon > base > cache-base:
         reason: Waiting for fix
         expires: '2021-01-22T21:50:40.114Z'
+  SNYK-JS-GLOBPARENT-1016905:
+    - react-scripts > eslint > glob-parent:
+        reason: No fix yet
+        expires: '2021-02-14T00:07:19.157Z'
+    - react-scripts > webpack > watchpack > chokidar > glob-parent:
+        reason: No fix yet
+        expires: '2021-02-14T00:07:19.157Z'
+    - react-scripts > @typescript-eslint/eslint-plugin > @typescript-eslint/experimental-utils > @typescript-eslint/typescript-estree > globby > fast-glob > glob-parent:
+        reason: No fix yet
+        expires: '2021-02-14T00:07:19.158Z'
+    - react-scripts > webpack > watchpack > watchpack-chokidar2 > chokidar > glob-parent:
+        reason: No fix yet
+        expires: '2021-02-14T00:07:19.158Z'
 patch: {}
