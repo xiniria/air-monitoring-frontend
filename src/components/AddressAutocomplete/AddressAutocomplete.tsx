@@ -7,7 +7,8 @@ import usePlacesAutocomplete, {
 import useOnclickOutside from 'react-cool-onclickoutside';
 import './AddressAutocomplete.css';
 import useGeolocation from 'hooks/useGeolocation/useGeolocation';
-import { useLocation, LocationTypes } from 'LocationContext';
+import { useLocation } from 'LocationContext';
+import { LocationTypes } from 'interfaces/location';
 
 function AddressAutocomplete(): JSX.Element {
   const currentPos = useGeolocation();

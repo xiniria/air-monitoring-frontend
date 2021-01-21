@@ -3,7 +3,7 @@ import useGeolocation from 'hooks/useGeolocation/useGeolocation';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { configure } from 'enzyme';
 import geolocate from 'mock-geolocation';
-import { LocationTypes } from 'LocationContext';
+import { LocationTypes } from 'interfaces/location';
 
 configure({ adapter: new Adapter() });
 

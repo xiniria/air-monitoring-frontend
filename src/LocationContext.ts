@@ -1,17 +1,5 @@
 import { createContext, useContext } from 'react';
-
-export enum LocationTypes {
-  Geolocation = 'geolocation',
-  Address = 'address',
-  None = 'none',
-}
-
-export interface ILocation {
-  latitude: number;
-  longitude: number;
-  error: string;
-  type: LocationTypes;
-}
+import ILocation, { LocationTypes } from 'interfaces/location';
 
 export type LocationContextType = {
   location: ILocation;

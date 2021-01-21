@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ILocation, LocationTypes } from 'LocationContext';
+import ILocation, { LocationTypes } from 'interfaces/location';
 
 export interface PositionError {
   code: number;
