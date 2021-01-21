@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import { configure } from 'enzyme';
 import geolocate from 'mock-geolocation';
 import App from 'App';
-import { LocationTypes } from 'LocationContext';
+import { LocationTypes } from 'interfaces/location';
 
 configure({ adapter: new Adapter() });
 
