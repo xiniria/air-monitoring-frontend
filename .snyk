@@ -7,13 +7,17 @@ ignore:
         reason: >-
           Vulnerability in webpack-dev-server which should never be used in
           production (but still, we're waiting for it to be fixed)
-        expires: '2021-01-22T21:50:40.113Z'
+        expires: '2021-02-23T11:24:07.932Z'
     - react-scripts > webpack > terser-webpack-plugin > cacache > y18n:
-        reason: Waiting for fix
-        expires: '2021-01-22T21:50:40.113Z'
+        reason: >-
+          Vulnerability in webpack-dev-server which should never be used in
+          production (but still, we're waiting for it to be fixed)
+        expires: '2021-02-23T11:24:07.932Z'
     - react-scripts > jest > @jest/core > jest-config > @jest/test-sequencer > jest-runner > jest-runtime > yargs > y18n:
-        reason: Waiting for fix
-        expires: '2021-01-22T21:50:40.114Z'
+        reason: >-
+          Vulnerability in webpack-dev-server which should never be used in
+          production (but still, we're waiting for it to be fixed)
+        expires: '2021-02-23T11:24:07.933Z'
   SNYK-JS-CACHEBASE-1054631:
     - react-scripts > babel-jest > @jest/transform > jest-haste-map > sane > anymatch > micromatch > braces > snapdragon > base > cache-base:
         reason: Waiting for fix
@@ -31,4 +35,12 @@ ignore:
     - react-scripts > webpack > watchpack > watchpack-chokidar2 > chokidar > glob-parent:
         reason: No fix yet
         expires: '2021-02-14T00:07:19.158Z'
+  SNYK-JS-EJS-1049328:
+    - react-scripts > workbox-webpack-plugin > workbox-build > @surma/rollup-plugin-off-main-thread > ejs:
+        reason: No patch yet
+        expires: '2021-02-23T11:17:55.669Z'
+  SNYK-JS-IMMER-1019369:
+    - react-scripts > react-dev-utils > immer:
+        reason: No patch yet
+        expires: '2021-02-23T11:17:55.669Z'
 patch: {}
