@@ -1,5 +1,8 @@
 import React from 'react';
 import useData from 'hooks/useData/useData';
+import usePollutants, {
+  getPollutantById,
+} from 'hooks/usePollutants/usePollutants';
 import { makeStyles } from '@material-ui/core/styles';
 import { StylesProvider } from '@material-ui/core';
 import Table from '@material-ui/core/Table';
@@ -23,7 +26,9 @@ const useStyles = makeStyles({
 });
 
 function Data(props: { latitude: number; longitude: number }): JSX.Element {
+  const pollutants = usePollutants().data;
   const { status, data, error, isFetching } = useData(props);
+
   const classes = useStyles();
 
   if (status === 'loading' || data === null) {
@@ -62,7 +67,9 @@ function Data(props: { latitude: number; longitude: number }): JSX.Element {
                   <TableCell align="center">{row.datetime}</TableCell>
                   <TableCell align="center">{row.value}</TableCell>
                   <TableCell align="center">{row.stationId}</TableCell>
-                  <TableCell align="center">{row.pollutantId}</TableCell>
+                  <TableCell align="center">
+                    {getPollutantById(pollutants, row.pollutantId).fullName}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

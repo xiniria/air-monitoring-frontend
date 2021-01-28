@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import { IPollutant } from 'interfaces/pollutant';
+import IPollutant from 'interfaces/pollutant';
 import './PollutantList.css';
 
 function PollutantItem(pollutant: IPollutant): JSX.Element {

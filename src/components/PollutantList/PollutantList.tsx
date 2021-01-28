@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import PollutantItem from './PollutantItem';
-import { IPollutant } from 'interfaces/pollutant';
+import IPollutant from 'interfaces/pollutant';
 import './PollutantList.css';
 import { useHistory } from 'react-router-dom';
 
@@ -15,6 +15,7 @@ const pollutants: IPollutant[] = [
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     deletedAt: null,
+    waqiName: 'aqi',
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const pollutants: IPollutant[] = [
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     deletedAt: null,
+    waqiName: 'co',
   },
 ];
 

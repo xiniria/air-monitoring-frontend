@@ -1,9 +1,10 @@
-export interface IPollutant {
+export default interface IPollutant {
   id: number;
-  fullName: string;
-  shortName: string;
-  description: string;
   createdAt: string;
   updatedAt: string;
   deletedAt: string | null;
+  fullName: string;
+  shortName: string;
+  description: string;
+  waqiName: string;
 }
