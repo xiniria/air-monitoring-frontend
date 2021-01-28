@@ -17,17 +17,17 @@ const wrapper = ({ children }: IProps) => (
 
 jest.setTimeout(15000);
 describe('Error management for backend', () => {
-  const props = {
-    latitude: NaN,
-    longitude: NaN,
-  };
-
   const spy = jest.spyOn(console, 'error');
 
   test('Returns an error if backend is down', async () => {
+    const props = {
+      latitude: 48.8534,
+      longitude: 2.3488,
+    };
+
     const { result, waitFor } = renderHook(() => useData(props), { wrapper });
 
-    await waitFor(() => result.current.isError, { timeout: 10000 });
+    await waitFor(() => result.current.isError, { timeout: 15000 });
 
     expect(result.current.error?.message).toContain('Network request failed');
     expect(spy).toHaveBeenCalled();
@@ -35,22 +35,16 @@ describe('Error management for backend', () => {
   });
 
   test('Returns an error when latitude and longitude are NaN', async () => {
-    nock('http://localhost:5000')
-      .persist()
-      .defaultReplyHeaders({
-        'access-control-allow-origin': '*',
-        'access-control-allow-credentials': 'true',
-      })
-      .get(`/pollutant-data/${props.latitude}/${props.longitude}`)
-      .reply(400);
+    const props = {
+      latitude: NaN,
+      longitude: NaN,
+    };
 
     const { result, waitFor } = renderHook(() => useData(props), { wrapper });
 
-    await waitFor(() => result.current.isError, { timeout: 10000 });
+    await waitFor(() => result.current.isSuccess);
 
-    expect(result.current.status).toContain('error');
-    expect(spy).toHaveBeenCalled();
-    spy.mockRestore();
+    expect(result.current.data).toEqual(null);
   });
 });
 

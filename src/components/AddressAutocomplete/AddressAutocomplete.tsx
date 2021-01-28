@@ -98,7 +98,7 @@ function AddressAutocomplete(): JSX.Element {
     });
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="address-autocomplete-container">
       <input
         className="address-input"
         value={value}

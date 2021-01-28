@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import Navbar from 'components/Navbar/Navbar';
 import Home from 'components/Home/Home';
+import Navbar from 'components/Navbar/Navbar';
+import PollutantDetails from './components/PollutantDetails/PollutantDetails';
+import PollutantList from 'components/PollutantList/PollutantList';
 import useGeolocation from 'hooks/useGeolocation/useGeolocation';
-import AddressAutocomplete from 'components/AddressAutocomplete/AddressAutocomplete';
-import Data from 'components/Data/Data';
 import { LocationContext, equals } from 'LocationContext';
 import { LocationTypes } from 'interfaces/location';
 import 'App.css';
@@ -25,7 +25,7 @@ function App(): JSX.Element {
 
   useEffect(() => {
     if (
-      location.type == LocationTypes.Geolocation &&
+      location.type === LocationTypes.Geolocation &&
       !equals(location, currentPos)
     ) {
       setLocation(currentPos);
@@ -35,7 +35,6 @@ function App(): JSX.Element {
   return (
     <LocationContext.Provider value={{ location, setLocation }}>
       <Router>
-        <AddressAutocomplete />
         <QueryClientProvider client={queryClient}>
           <div className="App">
             <Switch>
@@ -43,17 +42,21 @@ function App(): JSX.Element {
               <Route exact path="/location" component={Home}></Route>
               <Route exact path="/map" component={Home}></Route>
               <Route exact path="/predictions" component={Home}></Route>
-              <Route exact path="/info" component={Home}></Route>
+              <Route exact path="/info" component={PollutantList}></Route>
+              <Route
+                exact
+                path="/pollutant-details/:pollutantId"
+                component={PollutantDetails}
+              ></Route>
             </Switch>
-
-            <h3>Latitude : {location.latitude}</h3>
-            <h3>Longitude : {location.longitude}</h3>
-            {location.error && <p>Erreur : {location.error}</p>}
-            <Data latitude={location.latitude} longitude={location.longitude} />
           </div>
-          <ReactQueryDevtools initialIsOpen={false} />
+          {process.env.REACT_APP_RENDER_REACT_QUERY_DEVTOOLS === 'true' && (
+            <ReactQueryDevtools initialIsOpen={false} />
+          )}
         </QueryClientProvider>
-        <Navbar />
+
+        {/* We set the path as key to force re-render on route change */}
+        <Navbar key={window.location.pathname} />
       </Router>
     </LocationContext.Provider>
   );

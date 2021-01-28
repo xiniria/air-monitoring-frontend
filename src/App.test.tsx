@@ -9,6 +9,8 @@ import { LocationTypes } from 'interfaces/location';
 
 configure({ adapter: new Adapter() });
 
+process.env.REACT_APP_RENDER_REACT_QUERY_DEVTOOLS = 'false';
+
 test('renders without crashing', () => {
   render(<App />);
 });
