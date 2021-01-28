@@ -26,7 +26,7 @@ function Data(props: { latitude: number; longitude: number }): JSX.Element {
   const { status, data, error, isFetching } = useData(props);
   const classes = useStyles();
 
-  if (status === 'loading') {
+  if (status === 'loading' || data === null) {
     return <p>Loading...</p>;
   }
 
