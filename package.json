@@ -80,7 +80,7 @@
     "nock": "13.0.7",
     "prettier": "2.2.1",
     "react-cool-onclickoutside": "1.5.9",
-    "react-query": "3.6.1",
+    "react-query": "3.7.1",
     "react-router-dom": "5.2.0",
     "snyk": "1.440.4",
     "stylelint": "13.9.0",
