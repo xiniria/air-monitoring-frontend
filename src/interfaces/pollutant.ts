@@ -7,4 +7,5 @@ export default interface IPollutant {
   shortName: string;
   description: string;
   waqiName: string;
+  isPollutant: boolean;
 }

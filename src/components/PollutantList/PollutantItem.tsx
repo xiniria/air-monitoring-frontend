@@ -6,6 +6,10 @@ import IPollutant from 'interfaces/pollutant';
 import './PollutantList.css';
 
 function PollutantItem(pollutant: IPollutant): JSX.Element {
+  const description = pollutant.description
+    ? pollutant.description.split('\n\n')[0]
+    : '';
+
   return (
     <Link to={`/pollutant-details/${pollutant.id}`} className="link">
       <Grid
@@ -17,10 +21,7 @@ function PollutantItem(pollutant: IPollutant): JSX.Element {
         <Grid item xs={10}>
           <div className="pollutant-item">
             <h3 className="pollutant-item-name">{`${pollutant.fullName} (${pollutant.shortName})`}</h3>
-            <p className="pollutant-item-text">{`${pollutant.description.substr(
-              0,
-              100,
-            )}`}</p>
+            <p className="pollutant-item-text">{`${description}`}</p>
           </div>
         </Grid>
         <Grid item xs={2}>
