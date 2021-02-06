@@ -6,6 +6,7 @@ stages:
   - Test
   - Build
   - Security
+  - Deploy
 
 cache: &global_cache
   key:
@@ -23,6 +24,7 @@ prepare:
     policy: pull-push
   script:
     - npm install
+  dependencies: []
 
 lint:
   except:
@@ -31,6 +33,7 @@ lint:
   script:
     - npm run eslint:ci
     - npm run stylelint:ci
+  dependencies: []
 
 test:
   except:
@@ -38,13 +41,30 @@ test:
   stage: Test
   script:
     - npm run test:ci
+  dependencies: []
 
 build:
   except:
     - schedules
+    - tags
   stage: Build
   script:
     - npm run build
+  dependencies: []
+
+build_prod:
+  only:
+    - tags
+  stage: Build
+  before_script:
+    - echo "$ENV_FILE_PRODUCTION" > ./.env.production
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+  dependencies: []
+
 
 audit:
   except:
@@ -52,6 +72,7 @@ audit:
   stage: Security
   script:
     - npm audit
+  dependencies: []
 
 lockfile_lint:
   except:
@@ -59,6 +80,7 @@ lockfile_lint:
   stage: Security
   script:
     - npm run lockfile-lint
+  dependencies: []
 
 snyk_test:
   only:
@@ -84,3 +106,20 @@ snyk_monitor:
   script:
     - npm run snyk:monitor
 
+deploy:
+  only:
+    - tags
+  stage: Deploy
+  before_script:
+    - 'which ssh-agent || (apt-get update -y && apt-get install openssh-client -y)'
+    - eval $(ssh-agent -s)
+    - echo "$SERVER_SSH_PRIVATE_KEY" | tr -d "\r" | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan "$SERVER_URL" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - scp -r build "$SERVER_USER"@"$SERVER_URL":/home/$SERVER_USER/air-monitoring-frontend
+    - ssh "$SERVER_USER"@"$SERVER_URL" "/home/$SERVER_USER/air-monitoring-frontend/redeploy.sh"
+  dependencies:
+    - build_prod
