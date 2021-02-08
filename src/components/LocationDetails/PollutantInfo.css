@@ -1,0 +1,17 @@
+.level-icon {
+  margin: 0 1rem;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.short-name {
+  font-weight: bold;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.link {
+  display: block;
+  color: black;
+  text-decoration: none;
+}

@@ -1,0 +1,22 @@
+.weather-name {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.weather-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  padding: 4px;
+  font-family: Oldenburg, serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border-right: 2px solid white;
+}
+
+.weather-value {
+  padding: 0 10px;
+}

@@ -8,4 +8,5 @@ export default interface IPollutant {
   description: string;
   waqiName: string;
   isPollutant: boolean;
+  unit: string;
 }
