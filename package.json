@@ -79,7 +79,7 @@
     "mock-geolocation": "1.0.11",
     "nock": "13.0.7",
     "prettier": "2.2.1",
-    "react-cool-onclickoutside": "1.5.9",
+    "react-cool-onclickoutside": "1.6.0",
     "react-query": "3.8.2",
     "react-router-dom": "5.2.0",
     "snyk": "1.446.0",
