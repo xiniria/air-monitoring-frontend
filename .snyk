@@ -43,4 +43,142 @@ ignore:
     - react-scripts > react-dev-utils > immer:
         reason: No patch yet
         expires: '2021-02-23T11:17:55.669Z'
+  SNYK-JS-JSDOM-1075447:
+    - react-scripts > jest > @jest/core > jest-config > jest-environment-jsdom > jsdom:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+  SNYK-JS-LODASH-1018905:
+    - react-scripts > @babel/core > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > @typescript-eslint/eslint-plugin > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > eslint > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > eslint-plugin-flowtype > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > html-webpack-plugin > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > webpack-manifest-plugin > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > @babel/core > @babel/helper-module-transforms > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > eslint > @eslint/eslintrc > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > eslint > table > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > html-webpack-plugin > pretty-error > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > optimize-css-assets-webpack-plugin > last-call-webpack-plugin > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > webpack-dev-server > http-proxy-middleware > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > @babel/core > @babel/generator > @babel/types > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > @typescript-eslint/eslint-plugin > @typescript-eslint/experimental-utils > @typescript-eslint/typescript-estree > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > eslint-plugin-testing-library > @typescript-eslint/experimental-utils > @typescript-eslint/typescript-estree > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > html-webpack-plugin > pretty-error > renderkid > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > webpack-dev-server > portfinder > async > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.657Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/helper-module-imports > @babel/types > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.657Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-transform-modules-amd > @babel/helper-module-transforms > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.657Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/traverse > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.658Z'
+    - react-scripts > jest > @jest/core > jest-config > jest-environment-jsdom > jsdom > request-promise-native > request-promise-core > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.658Z'
+  SNYK-JS-LODASH-1040724:
+    - react-scripts > @babel/core > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > @typescript-eslint/eslint-plugin > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > eslint > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > eslint-plugin-flowtype > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > html-webpack-plugin > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > webpack-manifest-plugin > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > @babel/core > @babel/helper-module-transforms > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > eslint > @eslint/eslintrc > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.655Z'
+    - react-scripts > eslint > table > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > html-webpack-plugin > pretty-error > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > optimize-css-assets-webpack-plugin > last-call-webpack-plugin > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > webpack-dev-server > http-proxy-middleware > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > @babel/core > @babel/generator > @babel/types > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > @typescript-eslint/eslint-plugin > @typescript-eslint/experimental-utils > @typescript-eslint/typescript-estree > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > eslint-plugin-testing-library > @typescript-eslint/experimental-utils > @typescript-eslint/typescript-estree > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > html-webpack-plugin > pretty-error > renderkid > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.656Z'
+    - react-scripts > webpack-dev-server > portfinder > async > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.657Z'
+    - react-scripts > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.657Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/helper-module-imports > @babel/types > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.657Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-transform-modules-amd > @babel/helper-module-transforms > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.657Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/traverse > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.658Z'
+    - react-scripts > jest > @jest/core > jest-config > jest-environment-jsdom > jsdom > request-promise-native > request-promise-core > lodash:
+        reason: None given
+        expires: '2021-03-20T13:10:17.658Z'
 patch: {}
