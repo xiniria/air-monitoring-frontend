@@ -60,6 +60,7 @@ build_prod:
     - tags
   stage: Build
   before_script:
+    - echo "$ENV_FILE_PRODUCTION"
     - echo "$ENV_FILE_PRODUCTION" > ./.env.production
   script:
     - npm run build
