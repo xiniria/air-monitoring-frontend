@@ -1,6 +1,6 @@
 {
   "name": "air-monitoring-frontend",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Frontend for the Air Monitoring PWA project.",
   "author": "Ali Raiki & Raphaël Dhôte",
   "private": true,
