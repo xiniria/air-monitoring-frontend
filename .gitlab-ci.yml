@@ -60,8 +60,7 @@ build_prod:
     - tags
   stage: Build
   before_script:
-    - echo "$ENV_FILE_PRODUCTION"
-    - echo "$ENV_FILE_PRODUCTION" > ./.env.production
+    - cat "$ENV_FILE_PRODUCTION" > ./.env.production.local
   script:
     - npm run build
   artifacts:
