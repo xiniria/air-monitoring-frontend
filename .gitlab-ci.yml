@@ -123,6 +123,6 @@ deploy:
     - chmod 644 ~/.ssh/known_hosts
   script:
     - scp -r build "$SERVER_USER"@"$SERVER_URL":/home/$SERVER_USER/air-monitoring-frontend
-    - ssh "$SERVER_USER"@"$SERVER_URL" "/home/$SERVER_USER/air-monitoring-frontend/redeploy.sh"
+    - ssh "$SERVER_USER"@"$SERVER_URL" "sudo /home/$SERVER_USER/air-monitoring-frontend/redeploy.sh"
   dependencies:
     - build_prod
