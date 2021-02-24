@@ -5,6 +5,7 @@ import usePollutants, {
 } from 'hooks/usePollutants/usePollutants';
 import { makeStyles } from '@material-ui/core/styles';
 import { StylesProvider } from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -32,7 +33,11 @@ function Data(props: { latitude: number; longitude: number }): JSX.Element {
   const classes = useStyles();
 
   if (status === 'loading' || data === null) {
-    return <p>Loading...</p>;
+    return (
+      <div className="loader">
+        <CircularProgress color="inherit" size={50} thickness={3} />
+      </div>
+    );
   }
 
   if (error) {
