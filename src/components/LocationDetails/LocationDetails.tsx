@@ -17,6 +17,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import { StylesProvider, makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import SentimentVerySatisfiedRoundedIcon from '@material-ui/icons/SentimentVerySatisfiedRounded';
 import SentimentSatisfiedRoundedIcon from '@material-ui/icons/SentimentSatisfiedRounded';
 import SentimentVeryDissatisfiedRoundedIcon from '@material-ui/icons/SentimentVeryDissatisfiedRounded';
@@ -52,7 +53,9 @@ function LocationDetails(): JSX.Element {
     return (
       <div>
         <AddressAutocomplete />
-        <p>Loading...</p>
+        <div className="loader">
+          <CircularProgress color="inherit" size={50} thickness={3} />
+        </div>
       </div>
     );
   }
