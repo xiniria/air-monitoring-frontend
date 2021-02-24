@@ -167,7 +167,7 @@ const levels: { [waqiName: string]: number[] } = {
 };
 
 //Date format
-const options = {
+const options: Intl.DateTimeFormatOptions = {
   day: 'numeric',
   month: 'short',
   year: 'numeric',
