@@ -38,7 +38,7 @@ ignore:
   SNYK-JS-EJS-1049328:
     - react-scripts > workbox-webpack-plugin > workbox-build > @surma/rollup-plugin-off-main-thread > ejs:
         reason: No patch yet
-        expires: '2021-02-23T11:17:55.669Z'
+        expires: '2021-03-26T14:03:52.463Z'
   SNYK-JS-IMMER-1019369:
     - react-scripts > react-dev-utils > immer:
         reason: No patch yet
