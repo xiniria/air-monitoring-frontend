@@ -51,6 +51,9 @@ ignore:
     - react-scripts > @babel/core > lodash:
         reason: None given
         expires: '2021-03-20T13:10:17.655Z'
+      react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        reason: None given
+        expires: '2021-03-27T15:53:03.594Z'
     - react-scripts > @typescript-eslint/eslint-plugin > lodash:
         reason: None given
         expires: '2021-03-20T13:10:17.655Z'
@@ -118,6 +121,9 @@ ignore:
     - react-scripts > @babel/core > lodash:
         reason: None given
         expires: '2021-03-20T13:10:17.655Z'
+      react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        reason: None given
+        expires: '2021-03-27T15:53:03.594Z'
     - react-scripts > @typescript-eslint/eslint-plugin > lodash:
         reason: None given
         expires: '2021-03-20T13:10:17.655Z'
