@@ -18,6 +18,10 @@
   color: crimson;
 }
 
+.unknown {
+  color: gray;
+}
+
 .good .additional {
   background: mediumseagreen;
 }
@@ -28,6 +32,10 @@
 
 .bad .additional {
   background: crimson;
+}
+
+.unknown .additional {
+  background: gray;
 }
 
 /* CSS for pollutant info card */
