@@ -21,6 +21,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import SentimentVerySatisfiedRoundedIcon from '@material-ui/icons/SentimentVerySatisfiedRounded';
 import SentimentSatisfiedRoundedIcon from '@material-ui/icons/SentimentSatisfiedRounded';
 import SentimentVeryDissatisfiedRoundedIcon from '@material-ui/icons/SentimentVeryDissatisfiedRounded';
+import SentimentDissatisfiedRoundedIcon from '@material-ui/icons/SentimentDissatisfiedRounded';
 import UpdateIcon from '@material-ui/icons/Update';
 import { LocationContext } from 'LocationContext';
 import './LocationDetails.css';
@@ -48,6 +49,27 @@ function LocationDetails(): JSX.Element {
   const { status, data, error } = useData(props);
 
   const cleanData = analyzeData(data || [], pollutants || []);
+
+  if (!cleanData.aqi) {
+    let aqiId: number;
+    if (!pollutants) aqiId = 0;
+    else {
+      const aqi = pollutants.find((pollutant) => pollutant.shortName === 'aqi');
+      aqiId = aqi ? aqi.id : 0;
+    }
+
+    cleanData.aqi = {
+      id: 0,
+      pollutantId: aqiId,
+      shortName: 'aqi',
+      fullName: `Indice de qualité de l'air`,
+      updatedAt: new Date().toLocaleDateString('fr', options),
+      level: 'unknown',
+      isPollutant: true,
+      unit: '',
+      value: 0,
+    };
+  }
 
   if (status === 'loading' || data === null) {
     return (
@@ -96,6 +118,9 @@ function LocationDetails(): JSX.Element {
                 )}
                 {cleanData['aqi'].level === 'bad' && (
                   <SentimentVeryDissatisfiedRoundedIcon className="smiley center" />
+                )}
+                {cleanData['aqi'].level === 'unknown' && (
+                  <SentimentDissatisfiedRoundedIcon className="smiley center" />
                 )}
               </div>
               <div className="more-info">
@@ -207,8 +232,11 @@ const analyzeData = (
         cleanEntry.level = 'good';
       } else if (value > level[1]) {
         cleanEntry.level = 'bad';
-      } else {
+      } else if (value > level[0] && value <= level[1]) {
         cleanEntry.level = 'average';
+      } else {
+        // this shouldn't happen, debugging case
+        cleanEntry.level = 'unknown';
       }
     }
     cleanData[waqiName] = cleanEntry;
