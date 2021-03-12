@@ -1,0 +1,64 @@
+.gauge {
+  position: relative;
+  height: 200px;
+  width: 5px;
+  border-radius: 10px;
+  margin: auto;
+  background: linear-gradient(crimson, darkorange, mediumseagreen);
+}
+
+.gauge-circle {
+  position: absolute;
+  left: 50%;
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  margin-left: -12px;
+  background: linear-gradient(crimson, darkorange, mediumseagreen);
+  transition-duration: 1s;
+}
+
+.inner-circle {
+  position: relative;
+  top: 3px;
+  left: 50%;
+  height: 18px;
+  width: 18px;
+  border-radius: 18px;
+  margin-left: -9px;
+  background-color: white;
+}
+
+.pollutant-details {
+  font-size: 0.8rem;
+}
+
+.pollutant-value {
+  margin-right: 10px;
+  color: mediumseagreen;
+  font-size: 4rem;
+}
+
+.pollutant-description {
+  padding-right: 10px;
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+.link {
+  display: block;
+  margin-right: 1rem;
+  color: black;
+  text-decoration: none;
+}
+
+.chevron-icon {
+  margin-left: 0.8rem;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.more-details {
+  vertical-align: middle;
+  display: inline-block;
+}
