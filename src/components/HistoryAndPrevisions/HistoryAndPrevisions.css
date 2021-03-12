@@ -1,0 +1,14 @@
+.pollutant-btn {
+  margin: 0 5px !important;
+  font-family: inherit !important;
+  font-weight: bold !important;
+  border: 2px solid mediumseagreen !important;
+  background-color: white !important;
+  color: mediumseagreen !important;
+  box-shadow: none !important;
+}
+
+.pollutant-btn.selected {
+  background-color: mediumseagreen !important;
+  color: white !important;
+}

@@ -1,26 +1,49 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import AddressAutocomplete from 'components/AddressAutocomplete/AddressAutocomplete';
+import PageTitle from '../PageTitle/PageTitle';
+import HistoryChart from 'components/HistoryChart/HistoryChart';
 import usePollutants, {
   getPollutantById,
 } from '../../hooks/usePollutants/usePollutants';
-import PageTitle from '../PageTitle/PageTitle';
+import useHistoryData from 'hooks/useHistoryData/useHistoryData';
+import { LocationContext } from 'LocationContext';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import './PollutantDetails.css';
 
 function PollutantDetails(): JSX.Element {
-  const { status, data: pollutants, error, isFetching } = usePollutants();
+  const { location } = useContext(LocationContext);
+  const props = { latitude: location.latitude, longitude: location.longitude };
 
-  if (status === 'loading') {
+  const {
+    status: pollutantsStatus,
+    data: pollutants,
+    error: pollutantsError,
+  } = usePollutants();
+  const { status, data, error } = useHistoryData(props);
+
+  if (status === 'loading' || pollutantsStatus === 'loading') {
     return (
-      <div className="loader">
-        <CircularProgress color="inherit" size={50} thickness={3} />
+      <div>
+        <AddressAutocomplete />
+        <PageTitle title="..." />
+        <div className="loader">
+          <CircularProgress color="inherit" size={50} thickness={3} />
+        </div>
       </div>
     );
   }
 
-  if (error) {
-    return <p>{error.message}</p>;
+  if (error || pollutantsError) {
+    return (
+      <div>
+        <AddressAutocomplete />
+        <PageTitle title="..." />
+        <p>{error?.message || pollutantsError?.message}</p>
+      </div>
+    );
   }
+
   const { pollutantId } = useParams<{ pollutantId: string }>();
   const pollutant = getPollutantById(pollutants, parseInt(pollutantId, 10));
   const description = pollutant.description
@@ -33,9 +56,14 @@ function PollutantDetails(): JSX.Element {
 
   return (
     <div>
+      <AddressAutocomplete />
       <PageTitle title={`${pollutant.fullName} (${pollutant.shortName})`} />
-      {isFetching && <p>Background fetching...</p>}
       {description}
+      <HistoryChart
+        data={data || []}
+        pollutants={pollutants || []}
+        pollutant={pollutant}
+      />
     </div>
   );
 }

@@ -246,3 +246,4 @@ const analyzeData = (
 };
 
 export default LocationDetails;
+export { levels };

@@ -1,0 +1,16 @@
+.chartWrapper {
+  padding-bottom: 0.5rem;
+}
+
+#chartAreaWrapper {
+  margin: 10px;
+  padding-bottom: 5px;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#chartAreaWrapper::-webkit-scrollbar {
+  display: none;
+}

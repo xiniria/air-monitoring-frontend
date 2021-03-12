@@ -25,3 +25,15 @@ export function getPollutantById(
   }
   return {} as IPollutant;
 }
+
+export function getPollutantByWaqiName(
+  data: IPollutant[] | undefined,
+  pollutantWaqiName: string,
+): IPollutant {
+  for (const pollutant of data || []) {
+    if (pollutant.waqiName === pollutantWaqiName) {
+      return pollutant;
+    }
+  }
+  return {} as IPollutant;
+}
