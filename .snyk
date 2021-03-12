@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.14.1
+version: v1.19.0
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   SNYK-JS-Y18N-1021887:
@@ -51,9 +51,6 @@ ignore:
     - react-scripts > @babel/core > lodash:
         reason: None given
         expires: '2021-03-20T13:10:17.655Z'
-      react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-annotate-as-pure > @babel/types > lodash:
-        reason: None given
-        expires: '2021-03-27T15:53:03.594Z'
     - react-scripts > @typescript-eslint/eslint-plugin > lodash:
         reason: None given
         expires: '2021-03-20T13:10:17.655Z'
@@ -117,13 +114,13 @@ ignore:
     - react-scripts > jest > @jest/core > jest-config > jest-environment-jsdom > jsdom > request-promise-native > request-promise-core > lodash:
         reason: None given
         expires: '2021-03-20T13:10:17.658Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        reason: None given
+        expires: '2021-03-27T15:53:03.594Z'
   SNYK-JS-LODASH-1040724:
     - react-scripts > @babel/core > lodash:
         reason: None given
         expires: '2021-03-20T13:10:17.655Z'
-      react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-annotate-as-pure > @babel/types > lodash:
-        reason: None given
-        expires: '2021-03-27T15:53:03.594Z'
     - react-scripts > @typescript-eslint/eslint-plugin > lodash:
         reason: None given
         expires: '2021-03-20T13:10:17.655Z'
@@ -187,4 +184,11 @@ ignore:
     - react-scripts > jest > @jest/core > jest-config > jest-environment-jsdom > jsdom > request-promise-native > request-promise-core > lodash:
         reason: None given
         expires: '2021-03-20T13:10:17.658Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        reason: None given
+        expires: '2021-03-27T15:53:03.594Z'
+  SNYK-JS-REACTDEVUTILS-1083268:
+    - react-scripts > react-dev-utils:
+        reason: None given
+        expires: '2021-04-11T08:49:58.262Z'
 patch: {}
