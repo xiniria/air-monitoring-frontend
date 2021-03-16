@@ -27,6 +27,7 @@
     "test:ci": "CI=true npm run test"
   },
   "dependencies": {
+    "notyf": "^3.9.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-scripts": "4.0.3",
