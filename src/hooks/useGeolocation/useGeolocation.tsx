@@ -41,12 +41,20 @@ function useGeolocation(): ILocation {
 
   useEffect(() => {
     if (navigator.geolocation) {
+      // https://stackoverflow.com/questions/53949393/cant-perform-a-react-state-update-on-an-unmounted-component
+      let isMounted = true;
       navigator.geolocation.getCurrentPosition(function (position) {
-        setCurrentPos({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-        });
+        if (isMounted) {
+          setCurrentPos({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+        }
       }, positionError);
+
+      return () => {
+        isMounted = false;
+      };
     } else {
       setError(
         "La géolocalisation n'est pas supportée par votre navigateur. Veuillez changer de navigateur ou renseigner une addresse.",
