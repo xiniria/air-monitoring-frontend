@@ -10,6 +10,7 @@ import usePollutants, {
 import IPollutant from 'interfaces/pollutant';
 import IPollutantData from 'interfaces/pollutant-data';
 import ICleanEntry from 'interfaces/clean-entry';
+import { levels } from 'levels';
 import Box from '@material-ui/core/Box';
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
@@ -175,25 +176,6 @@ function LocationDetails(): JSX.Element {
   );
 }
 
-//Pollutant level for color coding
-const aqiLevel = [50, 150];
-const coLevel = [9.5, 12.5];
-const no2Level = [0.101, 0.361];
-const o3Level = [0.076, 0.096];
-const pm10Level = [155, 255];
-const pm25Level = [35.5, 55.5];
-const so2Level = [36, 76];
-
-const levels: { [waqiName: string]: number[] } = {
-  aqi: aqiLevel,
-  co: coLevel,
-  no2: no2Level,
-  o3: o3Level,
-  pm10: pm10Level,
-  pm25: pm25Level,
-  so2: so2Level,
-};
-
 //Date format
 const options: Intl.DateTimeFormatOptions = {
   day: 'numeric',
@@ -246,4 +228,3 @@ const analyzeData = (
 };
 
 export default LocationDetails;
-export { levels };

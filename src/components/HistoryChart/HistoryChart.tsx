@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import HistoryValueDetails from 'components/HistoryValueDetails/HistoryValueDetails';
-import { levels } from 'components/LocationDetails/LocationDetails';
+import { levels } from 'levels';
 import {
   getPollutantById,
   getPollutantByWaqiName,
