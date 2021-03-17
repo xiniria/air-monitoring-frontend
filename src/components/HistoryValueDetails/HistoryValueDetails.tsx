@@ -1,20 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import IPollutant from 'interfaces/pollutant';
+import { maxLevels } from 'levels';
 import Grid from '@material-ui/core/Grid';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import './HistoryValueDetails.css';
-
-// "Max" levels of the pollutants for the gauge
-const maxLevels: { [waqiName: string]: number } = {
-  aqi: 200,
-  co: 15.5,
-  no2: 0.65,
-  o3: 0.096,
-  pm10: 355,
-  pm25: 150.5,
-  so2: 304,
-};
 
 function HistoryValueDetails(props: {
   pollutant: IPollutant;

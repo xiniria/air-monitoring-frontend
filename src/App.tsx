@@ -7,6 +7,7 @@ import Navbar from 'components/Navbar/Navbar';
 import PollutantDetails from './components/PollutantDetails/PollutantDetails';
 import PollutantList from 'components/PollutantList/PollutantList';
 import LocationDetails from 'components/LocationDetails/LocationDetails';
+import Map from 'components/Map/Map';
 import HistoryAndPrevisions from 'components/HistoryAndPrevisions/HistoryAndPrevisions';
 import useGeolocation from 'hooks/useGeolocation/useGeolocation';
 import { LocationContext, equals } from 'LocationContext';
@@ -42,7 +43,7 @@ function App(): JSX.Element {
             <Switch>
               <Route exact path="/" component={Home}></Route>
               <Route exact path="/location" component={LocationDetails}></Route>
-              <Route exact path="/map" component={Home}></Route>
+              <Route exact path="/map" component={Map}></Route>
               <Route
                 exact
                 path="/predictions"

@@ -1,0 +1,33 @@
+.buttons-container {
+  margin-top: 8vh;
+}
+
+.info-container {
+  border: 2px solid white;
+  padding: 10px;
+  color: white;
+  font-family: Comfortaa, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  display: none;
+}
+
+.info-container.good {
+  display: block;
+  background-color: mediumseagreen;
+}
+
+.info-container.average {
+  display: block;
+  background-color: darkorange;
+}
+
+.info-container.bad {
+  display: block;
+  background-color: crimson;
+}
+
+.infoBox img {
+  top: 0;
+  right: 0;
+  width: 6px;
+}
