@@ -115,7 +115,7 @@ function HistoryChart(props: {
     const timestamps = dataset.map((entry) =>
       new Date(entry.datetime)
         .toLocaleDateString('fr', options)
-        .split(',')
+        .split(/[à,]/)
         .reverse(),
     );
     return timestamps;
