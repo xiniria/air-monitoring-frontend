@@ -155,3 +155,29 @@
   font-size: 0.75rem;
   text-align: left;
 }
+
+th.table-details {
+  font-family: Comfortaa, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media (max-height: 700px) {
+  .card-container {
+    display: inline-block;
+  }
+
+  .center {
+    display: contents;
+  }
+}
+
+@media (min-height: 900px) {
+  .card-container {
+    display: inline-block;
+  }
+
+  .center {
+    display: contents;
+  }
+}

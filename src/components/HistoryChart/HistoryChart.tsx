@@ -30,7 +30,7 @@ const chartOptions: Chart.ChartOptions = {
   legend: {
     display: false,
     labels: {
-      fontFamily: "Conforma, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+      fontFamily: "Comfortaa, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     },
   },
   scales: {

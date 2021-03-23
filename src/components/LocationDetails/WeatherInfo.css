@@ -1,9 +1,15 @@
-.weather-name {
-  padding-left: 10px;
-  font-weight: bold;
+td.weather {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: Comfortaa, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.75rem;
+  border: none;
+  text-align: inherit;
 }
 
 .weather-icon {
+  color: white;
   display: inline-block;
   width: 15px;
   height: 15px;
@@ -17,6 +23,12 @@
   border-right: 2px solid white;
 }
 
+.weather-name {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
 .weather-value {
   padding: 0 10px;
+  float: right;
 }

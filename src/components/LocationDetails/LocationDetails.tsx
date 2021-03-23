@@ -17,7 +17,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
-import { StylesProvider, makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import SentimentVerySatisfiedRoundedIcon from '@material-ui/icons/SentimentVerySatisfiedRounded';
 import SentimentSatisfiedRoundedIcon from '@material-ui/icons/SentimentSatisfiedRounded';
@@ -27,22 +26,7 @@ import UpdateIcon from '@material-ui/icons/Update';
 import { LocationContext } from 'LocationContext';
 import './LocationDetails.css';
 
-const useStyles = makeStyles({
-  root: {
-    fontFamily: 'inherit',
-    fontSize: 'inherit',
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-    letterSpacing: 1,
-  },
-  table: {
-    fontSize: '0.75rem',
-    margin: '0',
-  },
-});
-
 function LocationDetails(): JSX.Element {
-  const classes = useStyles();
   const { location } = useContext(LocationContext);
   const props = { latitude: location.latitude, longitude: location.longitude };
 
@@ -93,10 +77,10 @@ function LocationDetails(): JSX.Element {
   }
 
   return (
-    <StylesProvider injectFirst>
+    <div>
       <AddressAutocomplete />
       <PageTitle title="Qualité de l'air" />
-      <Box height={170} mb={3}>
+      <Box className="card-container" height={170} mb={3}>
         <div className="center">
           <div className={`card ${cleanData['aqi'].level}`}>
             <div className="general">
@@ -134,11 +118,7 @@ function LocationDetails(): JSX.Element {
                     <span className="time">{cleanData['aqi'].updatedAt}</span>
                   </div>
                 </div>
-                <Table
-                  aria-label="Details Table"
-                  size="small"
-                  className={classes.table}
-                >
+                <Table aria-label="Details Table" size="small">
                   <TableBody>
                     {Object.values(cleanData)
                       .filter(
@@ -159,7 +139,7 @@ function LocationDetails(): JSX.Element {
       <Table aria-label="Details Table">
         <TableHead>
           <TableRow>
-            <TableCell className={classes.root} colSpan={2}>
+            <TableCell className="table-details" colSpan={2}>
               Détails
             </TableCell>
           </TableRow>
@@ -172,7 +152,7 @@ function LocationDetails(): JSX.Element {
             ))}
         </TableBody>
       </Table>
-    </StylesProvider>
+    </div>
   );
 }
 
