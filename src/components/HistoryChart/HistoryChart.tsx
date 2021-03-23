@@ -71,6 +71,8 @@ const chartOptions: Chart.ChartOptions = {
     yPadding: 5,
     caretSize: 0,
     position: 'custom',
+    intersect: false,
+    mode: 'index',
   },
 };
 
