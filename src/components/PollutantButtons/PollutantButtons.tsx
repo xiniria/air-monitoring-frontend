@@ -1,7 +1,6 @@
 import React from 'react';
 import IPollutant from 'interfaces/pollutant';
 import Fab from '@material-ui/core/Fab';
-import { StylesProvider } from '@material-ui/core/styles';
 import './PollutantButtons.css';
 
 function PollutantButtons(props: {
@@ -15,7 +14,7 @@ function PollutantButtons(props: {
   };
 
   return (
-    <StylesProvider injectFirst>
+    <>
       {props.pollutants
         ?.filter((pollutant) => pollutant.isPollutant)
         .sort((a, b) => (a.waqiName > b.waqiName ? 1 : -1)) // Order alphabetically
@@ -39,7 +38,7 @@ function PollutantButtons(props: {
             </Fab>
           );
         })}
-    </StylesProvider>
+    </>
   );
 }
 
