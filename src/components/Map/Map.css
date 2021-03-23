@@ -26,8 +26,12 @@
   background-color: crimson;
 }
 
+.infoBox {
+  min-width: min-content;
+}
+
 .infoBox img {
   top: 0;
   right: 0;
-  width: 6px;
+  width: 8px;
 }
