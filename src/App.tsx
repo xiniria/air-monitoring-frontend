@@ -35,26 +35,48 @@ function App(): JSX.Element {
     }
   }, [currentPos]);
 
+  const useRoute = (
+    path: string,
+    Component: () => JSX.Element,
+    title: string,
+  ): JSX.Element => (
+    <Route
+      exact
+      path={path}
+      render={() => {
+        document.title = title;
+        return <Component></Component>;
+      }}
+      key={Component.name}
+    ></Route>
+  );
+
   return (
     <LocationContext.Provider value={{ location, setLocation }}>
       <Router>
         <QueryClientProvider client={queryClient}>
           <div className="App">
             <Switch>
-              <Route exact path="/" component={Home}></Route>
-              <Route exact path="/location" component={LocationDetails}></Route>
-              <Route exact path="/map" component={Map}></Route>
-              <Route
-                exact
-                path="/predictions"
-                component={HistoryAndPrevisions}
-              ></Route>
-              <Route exact path="/info" component={PollutantList}></Route>
-              <Route
-                exact
-                path="/pollutant-details/:pollutantId"
-                component={PollutantDetails}
-              ></Route>
+              {[
+                useRoute('/', Home, 'AirTrack'),
+                useRoute('/map', Map, 'AirTrack - Carte'),
+                useRoute(
+                  '/location',
+                  LocationDetails,
+                  "AirTrack - Qualité de l'air",
+                ),
+                useRoute(
+                  '/predictions',
+                  HistoryAndPrevisions,
+                  'AirTrack - Historique & prédictions',
+                ),
+                useRoute('/info', PollutantList, 'AirTrack - Informations'),
+                useRoute(
+                  '/pollutant-details/:pollutantId',
+                  PollutantDetails,
+                  'AirTrack - Pollutant',
+                ),
+              ]}
             </Switch>
           </div>
           {process.env.REACT_APP_RENDER_REACT_QUERY_DEVTOOLS === 'true' && (
