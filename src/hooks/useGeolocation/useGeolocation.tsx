@@ -44,7 +44,16 @@ function useGeolocation(): ILocation {
       // https://stackoverflow.com/questions/53949393/cant-perform-a-react-state-update-on-an-unmounted-component
       let isMounted = true;
       navigator.geolocation.getCurrentPosition(function (position) {
-        if (isMounted) {
+        if (
+          isMounted &&
+          (Number.isNaN(currentPos.latitude) ||
+            Number.isNaN(currentPos.longitude) ||
+            // don't change position if the change in geolocation is not significant
+            Math.abs(position.coords.latitude - currentPos.latitude) >
+              0.00001 ||
+            Math.abs(position.coords.longitude - currentPos.longitude) >
+              0.00001)
+        ) {
           setCurrentPos({
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,

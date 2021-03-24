@@ -41,6 +41,52 @@ describe('Geolocation is supported', () => {
     geolocate.restore();
   });
 
+  test('Updates latitude and longitude if there is a significant change', () => {
+    geolocate.use();
+    const originalCoords = [48.8534, 2.3488];
+    const { result } = renderHook(() => useGeolocation());
+
+    act(() => {
+      geolocate.send({ lat: originalCoords[0], lng: originalCoords[1] });
+    });
+
+    const newCoords = [48.8574, 2.3408];
+    act(() => {
+      geolocate.send({ lat: newCoords[0], lng: newCoords[1] });
+    });
+
+    expect(result.current).toStrictEqual({
+      latitude: newCoords[0],
+      longitude: newCoords[1],
+      error: '',
+      type: LocationTypes.Geolocation,
+    });
+    geolocate.restore();
+  });
+
+  test('Does not update latitude and longitude if there no significant change', () => {
+    geolocate.use();
+    const originalCoords = [48.8534, 2.3488];
+    const { result } = renderHook(() => useGeolocation());
+
+    act(() => {
+      geolocate.send({ lat: originalCoords[0], lng: originalCoords[1] });
+    });
+
+    const newCoords = [48.853400001, 2.348800001];
+    act(() => {
+      geolocate.send({ lat: newCoords[0], lng: newCoords[1] });
+    });
+
+    expect(result.current).toStrictEqual({
+      latitude: originalCoords[0],
+      longitude: originalCoords[1],
+      error: '',
+      type: LocationTypes.Geolocation,
+    });
+    geolocate.restore();
+  });
+
   test('Returns error message when geolocation permission is denied timeout', () => {
     geolocate.use();
     const { result } = renderHook(() => useGeolocation());
