@@ -38,7 +38,7 @@ ignore:
   SNYK-JS-EJS-1049328:
     - react-scripts > workbox-webpack-plugin > workbox-build > @surma/rollup-plugin-off-main-thread > ejs:
         reason: No patch yet
-        expires: '2021-03-26T14:03:52.463Z'
+        expires: '2021-04-28T07:33:58.329Z'
   SNYK-JS-IMMER-1019369:
     - react-scripts > react-dev-utils > immer:
         reason: No patch yet
@@ -51,6 +51,9 @@ ignore:
     - react-scripts > @babel/core > lodash:
         reason: None given
         expires: '2021-04-21T08:10:26.753Z'
+      react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        reason: None given
+        expires: '2021-04-28T07:33:58.329Z'
     - react-scripts > @typescript-eslint/eslint-plugin > lodash:
         reason: None given
         expires: '2021-04-21T08:10:26.753Z'
@@ -169,6 +172,9 @@ ignore:
     - react-scripts > @babel/core > lodash:
         reason: None given
         expires: '2021-04-21T08:10:26.753Z'
+      react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        reason: None given
+        expires: '2021-04-28T07:33:58.329Z'
     - react-scripts > @typescript-eslint/eslint-plugin > lodash:
         reason: None given
         expires: '2021-04-21T08:10:26.753Z'
