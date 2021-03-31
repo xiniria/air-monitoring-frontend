@@ -59,7 +59,7 @@
     "@material-ui/icons": "5.0.0-alpha.28",
     "@react-google-maps/api": "2.1.1",
     "@testing-library/jest-dom": "5.11.10",
-    "@testing-library/react": "11.2.5",
+    "@testing-library/react": "11.2.6",
     "@testing-library/react-hooks": "5.1.1",
     "@testing-library/user-event": "13.1.1",
     "@types/chart.js": "2.9.31",
