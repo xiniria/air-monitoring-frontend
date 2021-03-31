@@ -181,6 +181,19 @@ function HistoryChart(props: {
       },
     };
 
+  if (dataset.data?.length === 0) {
+    return (
+      <div className="chartWrapper">
+        <div id="chartAreaWrapper">
+          <p>
+            La station la plus proche de votre localisation n&apos;a aucune
+            information concernant ce polluant pour l&apos;instant.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="chartWrapper">
       <div id="chartAreaWrapper">
