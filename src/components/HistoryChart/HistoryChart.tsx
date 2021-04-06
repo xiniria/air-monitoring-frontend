@@ -9,7 +9,7 @@ import IPollutant from 'interfaces/pollutant';
 import IPollutantData from 'interfaces/pollutant-data';
 import { Bar } from 'react-chartjs-2';
 import './HistoryChart.css';
-import Chart, { ChartDataSets } from 'chart.js';
+import Chart, { ChartDataSets, ChartTooltipItem } from 'chart.js';
 
 const options: Intl.DateTimeFormatOptions = {
   day: 'numeric',
@@ -110,38 +110,50 @@ function HistoryChart(props: {
     props.pollutants || [],
   );
 
-  const pollutantDataset = groupedData[props.pollutant.waqiName] || [];
+  const pollutantDataset = (groupedData[props.pollutant.waqiName] || []).sort(
+    (data1, data2) => {
+      const date1 = data1.isPrediction
+        ? data1.predictionDatetime
+        : data1.datetime;
+      const date2 = data2.isPrediction
+        ? data2.predictionDatetime
+        : data2.datetime;
+      return date1.localeCompare(date2);
+    },
+  );
 
   // Function to get and format the timestamp to display
   const getTimestamps = (dataset: IPollutantData[]): string[][] => {
-    const timestamps = dataset.map((entry) =>
-      new Date(entry.datetime)
+    return dataset.map((entry) => {
+      const timestamp = new Date(
+        entry.isPrediction ? entry.predictionDatetime : entry.datetime,
+      )
         .toLocaleDateString('fr', options)
         .split(/[à,]/)
-        .reverse(),
-    );
-    return timestamps;
+        .map((str) => str.trim())
+        .reverse();
+      if (entry.isPrediction) timestamp.push('(prédiction)');
+      return timestamp;
+    });
   };
 
   // Function to get the values of each data
   const getValues = (dataset: IPollutantData[]): number[] => {
-    const values = dataset.map((entry) => entry.value);
-    return values;
+    return dataset.map((entry) => entry.value);
   };
 
   // Function to get the color for each bar
   const getLevelColor = (dataset: IPollutantData[]): string[] => {
     const level = levels[props.pollutant.waqiName];
-    const levelColors = dataset.map(function (entry) {
+    return dataset.map((entry) => {
       if (entry.value <= level[0]) {
-        return 'mediumseagreen'; //good
+        return entry.isPrediction ? 'darkseagreen' : 'mediumseagreen'; // good
       } else if (entry.value > level[1]) {
-        return 'crimson'; //bad
+        return entry.isPrediction ? 'indianred' : 'crimson'; // bad
       } else {
-        return 'darkorange'; //average
+        return entry.isPrediction ? 'lightsalmon' : 'darkorange'; // average
       }
     });
-    return levelColors;
   };
 
   const timestamps = getTimestamps(pollutantDataset);
@@ -151,14 +163,14 @@ function HistoryChart(props: {
   // Dataset to display
   const dataset: ChartDataSets = {
     label: props.pollutant.waqiName,
-    backgroundColor: colors.reverse(),
-    data: values.reverse(),
+    backgroundColor: colors,
+    data: values,
     barPercentage: 0.3,
   };
 
   // Chart to display
   const dataChart = {
-    labels: timestamps.reverse(),
+    labels: timestamps,
     datasets: [dataset],
   };
 
@@ -167,9 +179,23 @@ function HistoryChart(props: {
   //, and then display the details as well as the tooltip
   const infoSection = document.getElementById('infos');
 
-  if (chartOptions.tooltips)
+  if (chartOptions.tooltips) {
     chartOptions.tooltips.callbacks = {
-      label: function (tooltipItem) {
+      title(items: Chart.ChartTooltipItem[]): string {
+        if (items.length === 1 && Array.isArray(items[0].xLabel)) {
+          const label = items[0].xLabel;
+          if (label.length === 3) {
+            // prediction
+            return `${label[0]}, ${label[1]} ${label[2]}`;
+          } else {
+            return `${label[0]}, ${label[1]}`;
+          }
+        } else {
+          // this should never happen
+          return '';
+        }
+      },
+      label(tooltipItem: ChartTooltipItem) {
         if (infoSection) infoSection.style.display = 'block';
         setCurrentPollutant(
           getPollutantByWaqiName(props.pollutants, dataset.label || ''),
@@ -180,6 +206,7 @@ function HistoryChart(props: {
         return dataset.label?.toUpperCase() + ' : ' + tooltipItem.yLabel;
       },
     };
+  }
 
   return (
     <div className="chartWrapper">

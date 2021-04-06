@@ -7,4 +7,6 @@ export default interface IPollutantData {
   value: number;
   stationId: number;
   pollutantId: number;
+  isPrediction: boolean;
+  predictionDatetime: string;
 }
