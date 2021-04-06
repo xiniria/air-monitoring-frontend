@@ -53,7 +53,6 @@ const chartOptions: Chart.ChartOptions = {
             "Comfortaa, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
           fontSize: 10,
           fontStyle: 'bold',
-          autoSkip: false,
           maxRotation: 0,
           minRotation: 0,
         },

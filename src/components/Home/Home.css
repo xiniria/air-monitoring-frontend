@@ -1,0 +1,68 @@
+.home-container .card-container {
+  margin-top: 10px;
+}
+
+.home-container .card {
+  box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home-container .center {
+  top: 160px;
+}
+
+.home-container .alert {
+  margin: 5px 10px;
+  color: rgb(255, 213, 153);
+  background-color: rgb(25, 15, 0);
+  opacity: 0.8;
+}
+
+.home-container .gmnoprint,
+.home-container .gm-fullscreen-control {
+  display: none;
+}
+
+.home-container .map-container {
+  height: 32vh;
+  width: 100%;
+}
+
+.home-map {
+  width: 95%;
+  margin: 10px 0;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.home-map .buttons-container {
+  margin-top: 2vh;
+}
+
+.home-map .pollutant-btn {
+  height: 40px;
+  width: 40px;
+  font-size: 12px;
+}
+
+.home-chart {
+  width: 95%;
+  display: inline-block;
+  margin: 10px;
+  padding-top: 10px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.home-chart .pollutant-btn {
+  height: 45px;
+  width: 45px;
+}
+
+@media (min-width: 500px) {
+  .home-map {
+    width: 400px;
+  }
+}

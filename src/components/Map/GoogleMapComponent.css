@@ -2,6 +2,11 @@
   margin-top: 8vh;
 }
 
+.map-container {
+  height: 86vh;
+  width: 100%;
+}
+
 .info-container {
   border: 2px solid white;
   padding: 10px;
