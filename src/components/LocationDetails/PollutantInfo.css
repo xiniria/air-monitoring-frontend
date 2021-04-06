@@ -4,6 +4,22 @@
   display: inline-block;
 }
 
+.level-icon.good {
+  color: mediumseagreen;
+}
+
+.level-icon.average {
+  color: darkorange;
+}
+
+.level-icon.bad {
+  color: crimson;
+}
+
+.level-icon.unknown {
+  color: gray;
+}
+
 .short-name {
   font-weight: bold;
   vertical-align: middle;

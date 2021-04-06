@@ -23,7 +23,7 @@ test('renders Location link', () => {
 
 test('Displays an error when geolocation is not supported', () => {
   render(<App />);
-  const errorDisplay = screen.getByText(/Erreur : La géolocalisation/i);
+  const errorDisplay = screen.getByText(/La géolocalisation/i);
   expect(errorDisplay).toBeInTheDocument();
 });
 
