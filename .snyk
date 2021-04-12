@@ -51,9 +51,6 @@ ignore:
     - react-scripts > @babel/core > lodash:
         reason: None given
         expires: '2021-04-21T08:10:26.753Z'
-      react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-annotate-as-pure > @babel/types > lodash:
-        reason: None given
-        expires: '2021-04-28T07:33:58.329Z'
     - react-scripts > @typescript-eslint/eslint-plugin > lodash:
         reason: None given
         expires: '2021-04-21T08:10:26.753Z'
@@ -168,13 +165,13 @@ ignore:
     - react-scripts > jest > @jest/core > jest-config > jest-environment-jsdom > jsdom > request-promise-native > request-promise-core > lodash:
         reason: None given
         expires: '2021-04-21T08:10:26.754Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        reason: None given
+        expires: '2021-04-28T07:33:58.329Z'
   SNYK-JS-LODASH-1040724:
     - react-scripts > @babel/core > lodash:
         reason: None given
         expires: '2021-04-21T08:10:26.753Z'
-      react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-annotate-as-pure > @babel/types > lodash:
-        reason: None given
-        expires: '2021-04-28T07:33:58.329Z'
     - react-scripts > @typescript-eslint/eslint-plugin > lodash:
         reason: None given
         expires: '2021-04-21T08:10:26.753Z'
@@ -289,10 +286,13 @@ ignore:
     - react-scripts > jest > @jest/core > jest-config > jest-environment-jsdom > jsdom > request-promise-native > request-promise-core > lodash:
         reason: None given
         expires: '2021-04-21T08:10:26.754Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        reason: None given
+        expires: '2021-04-28T07:33:58.329Z'
   SNYK-JS-REACTDEVUTILS-1083268:
     - react-scripts > react-dev-utils:
         reason: None given
-        expires: '2021-04-11T08:49:58.262Z'
+        expires: '2021-05-12T07:46:43.225Z'
   SNYK-JS-COLORSTRING-1082939:
     - react-scripts > optimize-css-assets-webpack-plugin > cssnano > cssnano-preset-default > postcss-colormin > color > color-string:
         reason: None given
